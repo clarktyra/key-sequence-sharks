@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.iamcal.com/sharkify/sharkify.js"></script>
+</head>
+
+<body>
+  <div>
+      <h1 >Riddle</h1>
+      <h2>Type a name that rhymes with shark</h2>
+  </div>
+  
+ <style>
+   h1 {
+    color: white;
+    text-align: center;
+    font-size:50px
+   }
+   h2 {
+    color: white;
+    text-align: center;
+    font-size:40px
+   }
+
+   body {
+     background-color: rgb(0, 56, 139)
+   }
+ 
+ </style>
+  
+  
+  
+  <script>
+    const array = [];
+    const secretCode = 'clark';
+
+    window.addEventListener('keyup', (e) => {
+      console.log(e.key);
+      array.push(e.key);
+      array.splice(-array.length-1, array.length - secretCode.length);
+      
+      if (array.join('').includes(secretCode)) {
+        console.log('You did it');
+        sharkify_add();
+      }
+
+      console.log(array);
+
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>
